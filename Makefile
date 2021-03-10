@@ -1,15 +1,15 @@
 NAME = checker
 
-INCLUDES = MyLIBFT/libft/libft.h
+INCLUDES = push_swap.h MyLIBFT/libft/libft.h
 
-FLAGS = gcc
+FLAGS = gcc -I
 
-FUN = test.c
+FUN = checker.c
 
 OBJ = $(FUN:.c=.o)
 
-LIBFT = MyLIBFT/libft.a
-MYLIBFT = MyLIBFT/
+LIBFT = ./MyLIBFT/libft.a
+MYLIBFT = ./MyLIBFT/
 
 all: $(NAME)
 
@@ -17,4 +17,4 @@ $(LIBFT):
 	@$(MAKE) -C $(MYLIBFT)
 
 $(NAME): $(OBJ) $(LIBFT) $(INCLUDES)
-	@$(FLAGS) $(FUN) $(LIBFT) -o $(NAME)
+	@$(FLAGS) $(FUN) $(OBJ) $(LIBFT) -L$(MYLIBFT) -o $(NAME)
