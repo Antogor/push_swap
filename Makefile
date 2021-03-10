@@ -1,10 +1,10 @@
 NAME = checker
 
-INCLUDES = push_swap.h MyLIBFT/libft/libft.h
+INCLUDES = push_swap.h ./MyLIBFT/libft/libft.h
 
 FLAGS = gcc -I
 
-FUN = checker.c
+FUN = checker.c instructions.c
 
 OBJ = $(FUN:.c=.o)
 
