@@ -2,7 +2,7 @@ NAME = checker
 
 INCLUDES = push_swap.h ./MyLIBFT/libft/libft.h
 
-FLAGS = gcc -I
+FLAGS = gcc -Ig -g
 
 FUN = checker.c instructions.c
 
@@ -17,4 +17,4 @@ $(LIBFT):
 	@$(MAKE) -C $(MYLIBFT)
 
 $(NAME): $(OBJ) $(LIBFT) $(INCLUDES)
-	@$(FLAGS) $(FUN) $(OBJ) $(LIBFT) -L$(MYLIBFT) -o $(NAME)
+	@$(FLAGS) $(FUN) $(LIBFT) -L$(MYLIBFT) -o $(NAME)
