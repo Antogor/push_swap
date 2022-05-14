@@ -1,20 +1,28 @@
-NAME = checker
-
-INCLUDES = push_swap.h ./MyLIBFT/libft/libft.h
-
+NAME = push_swap
+INCLUDES = ./MyLIBFT/libft/libft.h ./src/push_swap.h
+SRC = src/
 FLAGS = gcc -Ig -g
-
-FUN = checker.c instructions.c
-
-OBJ = $(FUN:.c=.o)
-
+FUN = $(wildcard $(SRC)*.c)
+OBJ = $(FUN:%.c=%.o)
 LIBFT = ./MyLIBFT/libft.a
 MYLIBFT = ./MyLIBFT/
 
-all: $(NAME)
+all: libft $(NAME)
 
-$(LIBFT): 
+libft: 
 	@$(MAKE) -C $(MYLIBFT)
 
-$(NAME): $(OBJ) $(LIBFT) $(INCLUDES)
-	@$(FLAGS) $(FUN) $(LIBFT) -L$(MYLIBFT) -o $(NAME)
+$(NAME): $(OBJ) $(INCLUDES)
+	@$(FLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+
+clean:
+	@rm -rvf $(OBJ) *.o
+
+fclean: clean
+	@cd MyLIBFT && make fclean
+	@rm -rvf $(NAME)
+
+re:
+	@make fclean all
+
+.PHONY: clean fclean all re
