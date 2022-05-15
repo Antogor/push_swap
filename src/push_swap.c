@@ -1,7 +1,21 @@
 # include "push_swap.h"
 
-int main() {
-	ft_printf("%d test\n", 5);
-	ft_printf("%d\n", ft_strlen("hola que tal"));
+int main(int argc, char **argv) 
+{
+	
+	t_stack *stack;
+
+	if (argc <= 1)
+	{
+		return (0);
+	}
+
+	if (!(stack = (t_stack *)malloc(sizeof(t_stack))))
+		ft_error(stack);
+
+	ft_validate(stack, argc, argv);
+	//ft_run(*stack);
+
+	ft_success(stack);
 	return (0);
 }
