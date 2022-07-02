@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:42:41 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/31 15:12:02 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:09:03 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,18 @@ static int	ft_comp(int bwr, int fd, char **s, char **line)
 		return (ft_comp_new_line(&s[fd], line));
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char		*buff;
-	static char *s[4096];
+	static char	*s[4096];
 	char		*tmp;
 	int			bwr;
 
-	if (!(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1)))
-		|| fd < 0 || line == 0)
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	bwr = read(fd, buff, BUFFER_SIZE);
+	if (!buff || fd < 0 || line == 0)
 		return (-1);
-	while ((bwr = read(fd, buff, BUFFER_SIZE)) > 0)
+	while (bwr > 0)
 	{
 		buff[bwr] = '\0';
 		if (s[fd] == NULL)

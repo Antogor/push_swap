@@ -6,15 +6,15 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:06:56 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/15 17:39:49 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:10:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t l;
+	size_t	l;
 
 	if (n == 0)
 		return (0);

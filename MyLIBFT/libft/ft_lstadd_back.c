@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 13:08:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/28 14:29:15 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/02 11:09:58 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = *lst;
 	if (aux == NULL)
