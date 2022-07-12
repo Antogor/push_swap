@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
+/*   Updated: 2022/07/12 21:47:57 by agarzon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -8,11 +20,11 @@
 
 typedef struct s_stacks
 {
-		int *a;
-		int *b;
-		int len_stack;
-		int len_a;
-		int len_b;
+	int	*a;
+	int	*b;
+	int	len_stack;
+	int len_a;
+	int len_b;
 }t_stack;
 
 void ft_error(t_stack *stack);

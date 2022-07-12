@@ -1,46 +1,58 @@
-# include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
+/*   Updated: 2022/07/12 21:46:40 by agarzon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isduplicate(int *a, int len)
+#include "push_swap.h"
+
+int	ft_isduplicate(int *a, int len)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	j = 1;
-	while(i < len)
+	while (i < len)
 	{
 		tmp = a[i];
-		while (j < len) {
+		while (j < len)
+		{
 			if (tmp == a[j])
 				return (0);
 			j++;
 		}
 		i++;
-		j = i+1;
+		j = i + 1;
 	}
-
 	return (1);
 }
 
-int ft_isnumeric(char *c)
+int	ft_isnumeric(char *c)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(c);
-	while (i < len) {
+	while (i < len)
+	{
 		if (c[i] == '+' || c[i] == '-')
 		{
-			if (c[i+1] == '\0' || c[i+1] == '-' || c[i+1] == '+')
+			if (c[i + 1] == '\0' || c[i + 1] == '-' || c[i + 1] == '+')
 				return (0);
 		}
 		if (!ft_isdigit(c[i]) && c[i] != '-' && c[i] != '+')
 			return (0);
 		i++;
 	}
-
 	return (1);
 }
 /*
@@ -67,20 +79,20 @@ char **ft_parser_str(char **arguments, int *n, int *argc)
 		return (arguments);
 }
 */
-void ft_validate(t_stack *stack, int argc, char **arguments)
+
+void	ft_validate(t_stack *stack, int argc, char **arguments)
 {
-	int i;
-	int j;
-	long long n;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
 //	if (argc == 2)
 //		arguments = ft_parser_str(arguments, &i, &argc);
 	stack->len_stack = argc -1;
-	stack->a = (int*)malloc(sizeof(int)*stack->len_stack);
-	stack->b = (int*)malloc(sizeof(int)*1);
-	while(i < argc)
+	stack->a = (int *)malloc(sizeof(int) * stack->len_stack);
+	stack->b = (int *)malloc(sizeof(int) * stack->len_stack);
+	while (i < argc)
 	{
 		if (!ft_isnumeric(arguments[i]))
 			ft_error(stack);
