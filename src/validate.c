@@ -79,7 +79,7 @@ void ft_validate(t_stack *stack, int argc, char **arguments)
 //		arguments = ft_parser_str(arguments, &i, &argc);
 	stack->len_stack = argc -1;
 	stack->a = (int*)malloc(sizeof(int)*stack->len_stack);
-	stack->b = (int*)malloc(sizeof(int)*stack->len_stack);
+	stack->b = (int*)malloc(sizeof(int)*1);
 	while(i < argc)
 	{
 		if (!ft_isnumeric(arguments[i]))

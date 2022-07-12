@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 		ft_error(stack);
 
 	ft_validate(stack, argc, argv);
-	//ft_run(*stack);
+	ft_run(stack);
 
 	ft_success(stack);
 	return (0);
