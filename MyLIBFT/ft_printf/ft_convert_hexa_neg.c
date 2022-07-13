@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:42:37 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:16:33 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:28:37 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ long int	ft_longint(int nb)
 	return (n);
 }
 
-int			count_hexa_neg(long int nb)
+int	count_hexa_neg(long int nb)
 {
 	long int	n;
 	int			len;
@@ -39,7 +39,7 @@ int			count_hexa_neg(long int nb)
 	return (len);
 }
 
-char		*ft_convert_hexa_neg(int nb)
+char	*ft_convert_hexa_neg(int nb)
 {
 	long int	n;
 	long int	tmp;

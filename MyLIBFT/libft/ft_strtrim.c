@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:38:38 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/27 16:30:55 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:59:07 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		cstart(char const *s1, char const *set)
+size_t	cstart(char const *s1, char const *set)
 {
 	size_t	count_s;
 	int		l;
@@ -37,7 +37,7 @@ size_t		cstart(char const *s1, char const *set)
 	return (count_s);
 }
 
-size_t		cend(char const *s1, char const *set)
+size_t	cend(char const *s1, char const *set)
 {
 	size_t	count_e;
 	size_t	len;
@@ -64,7 +64,7 @@ size_t		cend(char const *s1, char const *set)
 	return (count_e);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*new;
 	size_t	start;
@@ -83,7 +83,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		new = ft_strdup("");
 		return (new);
 	}
-	if (!(new = (char*)malloc(sizeof(char) * (len - (start + end)) + 1)))
+	new = (char *)malloc(sizeof(char) * (len - (start + end)) + 1);
+	if (!new)
 		return (NULL);
 	while (start < len - end)
 		new[l++] = s1[start++];

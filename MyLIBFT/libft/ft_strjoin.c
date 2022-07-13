@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 10:38:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/29 10:23:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:02:48 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	total = ((ft_strlen(s1)) + (ft_strlen(s2)) + 1);
-	new = (char*)malloc(sizeof(char) * total);
+	new = (char *)malloc(sizeof(char) * total);
 	if (new == 0)
 		return (NULL);
 	l = 0;

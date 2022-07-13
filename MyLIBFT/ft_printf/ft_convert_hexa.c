@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:04:48 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 12:14:37 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:37:43 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		count_hexa(int nb)
+int	count_hexa(int nb)
 {
 	unsigned long int	n;
 	int					len;

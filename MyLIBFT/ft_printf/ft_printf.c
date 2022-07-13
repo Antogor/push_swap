@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 17:58:02 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:18:08 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	to_printf(const char *s, t_printf *tab)
 {
-	int err;
+	int	err;
 
 	while (s[tab->len] != '\0')
 	{
@@ -39,12 +39,13 @@ void	to_printf(const char *s, t_printf *tab)
 	}
 }
 
-int		ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	int			br;
 	t_printf	*tab;
 
-	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
+	tab = (t_printf *)malloc(sizeof(t_printf));
+	if (!tab)
 		return (-1);
 	va_start(tab->args, s);
 	tab->len = 0;

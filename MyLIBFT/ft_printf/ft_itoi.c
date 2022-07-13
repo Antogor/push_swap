@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:44:39 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:44:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:16:37 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		ft_count_unb(unsigned long int nb)
+int	ft_count_unb(unsigned long int nb)
 {
 	int				count;
 	unsigned int	c;
@@ -31,7 +31,7 @@ int		ft_count_unb(unsigned long int nb)
 
 void	ft_putnum_un(char *s, unsigned int n, int l)
 {
-	unsigned int c;
+	unsigned int	c;
 
 	c = n;
 	s[l--] = '\0';
@@ -50,7 +50,7 @@ char	*ft_itoi(unsigned long int n)
 	int		l;
 
 	l = ft_count_unb(n);
-	new = (char*)malloc(sizeof(char) * l + 1);
+	new = (char *)malloc(sizeof(char) * l + 1);
 	if (new == 0)
 		return (NULL);
 	ft_putnum_un(new, n, l);

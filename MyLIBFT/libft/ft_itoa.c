@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:12:48 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 11:13:34 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:57:06 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_nb(int nb)
+int	ft_count_nb(int nb)
 {
 	int				count;
 	unsigned int	c;
@@ -38,7 +38,7 @@ int		ft_count_nb(int nb)
 
 void	ft_putnum(char *s, int n, int l)
 {
-	unsigned int c;
+	unsigned int	c;
 
 	c = 0;
 	s[l--] = '\0';
@@ -63,10 +63,8 @@ char	*ft_itoa(int n)
 	char	*new;
 	int		l;
 
-//	if (n < -2147483648)
-//		return (NULL);
 	l = ft_count_nb(n);
-	new = (char*)malloc(sizeof(char) * l + 1);
+	new = (char *)malloc(sizeof(char) * l + 1);
 	if (new == 0)
 		return (NULL);
 	ft_putnum(new, n, l);

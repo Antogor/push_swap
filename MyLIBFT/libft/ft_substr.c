@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 10:50:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/29 10:14:39 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:03:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == 0)
 		return (NULL);
-	substr = (char*)malloc(len + 1);
+	substr = (char *)malloc(len + 1);
 	if (substr == 0)
 		return (NULL);
 	q = 0;

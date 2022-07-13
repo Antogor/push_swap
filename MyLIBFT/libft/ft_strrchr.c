@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 12:45:44 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/27 11:41:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:00:42 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *last_pos;
+	const char	*last_pos;
 
 	last_pos = NULL;
 	while (*s != '\0')
@@ -24,8 +24,8 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	if (last_pos)
-		return ((char*)last_pos);
+		return ((char *)last_pos);
 	if (c == '\0')
-		return ((char*)s);
+		return ((char *)s);
 	return (NULL);
 }

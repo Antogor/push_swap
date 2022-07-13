@@ -6,19 +6,32 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:39:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/05/29 16:31:08 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:37:18 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
+void	check_nb(int nb, int *l, int *ls)
+{
+	if (nb < 0)
+	{
+		*l = 1;
+		*ls = 1;
+	}
+	else
+	{
+		*l = 0;
+		*ls = 0;
+	}
+}
+
 void	chase_nb(char *s, int nb, size_t len, t_printf *tab)
 {
-	int l;
-	int ls;
+	int	l;
+	int	ls;
 
-	l = nb < 0 ? 1 : 0;
-	ls = nb < 0 ? 1 : 0;
+	check_nb(nb, &l, &ls);
 	if (tab->precision >= (int)len)
 	{
 		l += ft_total(len, tab->precision);
@@ -43,11 +56,9 @@ void	chase_nb(char *s, int nb, size_t len, t_printf *tab)
 
 void	chase_line(char *s, int nb, size_t len, t_printf *tab)
 {
-	int l;
-//	int ls;
+	int	l;
 
 	l = 0;
-//	ls = 0;
 	if (nb < 0)
 	{
 		ft_putchar_fd(*s, 1);

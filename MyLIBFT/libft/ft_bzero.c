@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:41:14 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/27 11:42:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:06:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *l;
+	unsigned char	*l;
 
 	l = (unsigned char *)s;
 	if (n > 0)

@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:46:13 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:46:24 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:50:12 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		ft_punt(const char *s, t_printf *tab)
+int	ft_punt(const char *s, t_printf *tab)
 {
 	if (s[tab->len] == '.')
 	{

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:41:13 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:41:24 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:15:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long int	ft_atoa(const char *nptr)
 	while (nptr[l] != '\0')
 	{
 		if (nptr[l] == '\t' || nptr[l] == '\n' || nptr[l] == ' '
-		|| nptr[l] == '\v' || nptr[l] == '\f' || nptr[l] == '\r')
+			|| nptr[l] == '\v' || nptr[l] == '\f' || nptr[l] == '\r')
 			l++;
 		else
 			break ;

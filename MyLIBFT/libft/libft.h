@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:34:13 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/05/15 16:53:15 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:56:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack, const char *needle,
-					size_t len);
-long long					ft_atoi(const char *nptr);
+						size_t len);
+long long			ft_atoi(const char *nptr);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -49,7 +49,8 @@ char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_bi_array(int nrows, int ncolumns);
-int					**ft_fill_bi_array(int **array, int rows, int columns, int filled);
+int					**ft_fill_bi_array(int **array, int rows,
+						int columns, int filled);
 
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
@@ -60,7 +61,7 @@ int					get_next_line(int fd, char **line);
 
 int					ft_printf(const char *s, ...);
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -75,5 +76,5 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void*));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
-					void (*del)(void*));
+						void (*del)(void*));
 #endif

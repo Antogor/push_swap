@@ -6,15 +6,15 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 11:22:26 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/26 16:49:55 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:56:29 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (lst)

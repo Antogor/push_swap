@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:50:30 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 17:07:06 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:47:51 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen_print_f(const char *s, int l)
 {
-	size_t q;
+	size_t	q;
 
 	q = 0;
 	while (s[l] >= '0' && s[l] <= '9')
@@ -36,7 +36,7 @@ void	ft_axterix(t_printf *tab)
 	tab->len++;
 }
 
-int		ft_width(const char *s, t_printf *tab, int flags)
+int	ft_width(const char *s, t_printf *tab, int flags)
 {
 	char	*substr;
 	size_t	q;

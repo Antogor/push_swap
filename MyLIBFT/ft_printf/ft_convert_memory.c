@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:43:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 12:19:02 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:47:07 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		count_memory(long int nb)
+int	count_memory(long int nb)
 {
 	long int	n;
 	int			len;

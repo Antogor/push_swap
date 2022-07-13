@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:55 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 17:10:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:38:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		check_flags(const char *s, t_printf *tab)
+int	check_flags(const char *s, t_printf *tab)
 {
 	tab->flags = 0;
 	tab->punt = 0;

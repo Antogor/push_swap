@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:14:08 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/27 11:41:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:07:05 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	q = ft_strlen(s) + 1;
-	new = (char*)malloc(sizeof(char) * q);
+	new = (char *)malloc(sizeof(char) * q);
 	if (new == 0)
 		return (NULL);
 	l = 0;

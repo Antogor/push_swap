@@ -6,19 +6,16 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/05/29 15:47:16 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:52:08 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_FT_PRINTF_H
 # define LIB_FT_PRINTF_H
 
-//# include <unistd.h>
-//# include <stdarg.h>
-//# include <stdio.h>
 # include "../libft/libft.h"
 
-typedef	struct		s_list_printf
+typedef struct s_list_printf
 {
 	va_list			args;
 	int				br;
@@ -51,7 +48,7 @@ int					ft_total(size_t l, int tam);
 void				ft_put_spaces(int total, t_printf *tab);
 void				ft_putzeros(int total, t_printf *tab);
 void				ft_put_precision(char *s, int nb, size_t len,
-					t_printf *tab);
+						t_printf *tab);
 char				*ft_convert_hexa(int nb);
 char				*ft_convert_hexa_neg(int nb);
 char				*ft_convert_memory(long int nb);

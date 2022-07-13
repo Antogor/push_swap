@@ -6,14 +6,14 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:53:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/11/06 13:21:34 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:55:36 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z')
-	|| (c >= 'a' && c <= 'z'))
+		|| (c >= 'a' && c <= 'z'))
 		return (1);
 	else
 		return (0);

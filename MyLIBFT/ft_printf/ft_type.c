@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:49:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 16:13:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:39:10 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		ft_type(const char *s, t_printf *tab)
+int	ft_type(const char *s, t_printf *tab)
 {
 	if (s[tab->len] == 'd' || s[tab->len] == 'i')
 		return (s[tab->len]);

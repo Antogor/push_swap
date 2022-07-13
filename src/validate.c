@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/12 21:46:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 18:59:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	ft_validate(t_stack *stack, int argc, char **arguments)
 {
 	int	i;
 	int	j;
+	int	n;
 
 	i = 1;
 	j = 0;
