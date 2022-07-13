@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:40:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 16:43:08 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:32:29 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "headers/push_swap.h"
 
 int	main(int argc, char **argv)
 {

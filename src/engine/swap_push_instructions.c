@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:50:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 18:50:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:21:00 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	swap_stacks(int *stack, char *ins, int len)
 {

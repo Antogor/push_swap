@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 18:59:39 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:22:14 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	ft_isduplicate(int *a, int len)
 {

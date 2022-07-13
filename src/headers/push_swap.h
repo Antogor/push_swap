@@ -6,15 +6,15 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 18:44:04 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:32:25 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../MyLIBFT/libft/libft.h"
-# include "../MyLIBFT/ft_printf/lib_ft_printf.h"
+# include "../../MyLIBFT/libft/libft.h"
+# include "../../MyLIBFT/ft_printf/lib_ft_printf.h"
 # include <stdlib.h>
 # include <stdio.h>
 

@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:55:29 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/02 10:56:52 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:21:50 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 void	ft_success(t_stack *stack)
 {

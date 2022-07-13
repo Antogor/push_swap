@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:03:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 18:51:42 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:22:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	*ft_copy_array(int *ori, int len)
 {

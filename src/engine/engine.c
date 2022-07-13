@@ -6,11 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:07:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:01:50 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/13 19:20:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	ft_stack_is_sorted(int *a, int len)
 {

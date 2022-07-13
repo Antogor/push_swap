@@ -6,7 +6,7 @@
 #    By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 21:52:21 by agarzon-          #+#    #+#              #
-#    Updated: 2022/05/14 19:50:28 by agarzon-         ###   ########.fr        #
+#    Updated: 2022/07/13 20:09:40 by agarzon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,13 @@ FUN = ./GNL/get_next_line.c ./libft/ft_bzero.c ./libft/ft_isalnum.c ./libft/ft_i
 
 OBJS = $(FUN:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -c -I -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS) ./libft/libft.h
-	@gcc -c -I $(CFLAGS) $(FUN)
+	@$(CC) $(CFLAGS) $(FUN)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@$(MAKE) clean
@@ -44,3 +45,5 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: clean fclean re all
