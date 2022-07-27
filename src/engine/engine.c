@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:07:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/27 17:55:38 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/07/27 17:57:23 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ int	ft_run(t_stack *stack)
 		ft_success(stack);
 	stack->len_a = stack->len_stack;
 	stack->len_b = 0;
-
 	return (0);
 }
