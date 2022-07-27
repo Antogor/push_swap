@@ -6,13 +6,13 @@
 #    By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 21:52:21 by agarzon-          #+#    #+#              #
-#    Updated: 2022/07/13 20:09:40 by agarzon-         ###   ########.fr        #
+#    Updated: 2022/07/27 17:39:32 by agarzon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FUN = ./GNL/get_next_line.c ./libft/ft_bzero.c ./libft/ft_isalnum.c ./libft/ft_isalpha.c ./libft/ft_isascii.c ./libft/ft_isdigit.c \
+SRC = ./GNL/get_next_line.c ./libft/ft_bzero.c ./libft/ft_isalnum.c ./libft/ft_isalpha.c ./libft/ft_isascii.c ./libft/ft_isdigit.c \
 ./libft/ft_isprint.c ./libft/ft_memccpy.c ./libft/ft_memchr.c ./libft/ft_memcmp.c ./libft/ft_memcpy.c ./libft/ft_memmove.c \
 ./libft/ft_memset.c ./libft/ft_strchr.c ./libft/ft_strlen.c ./libft/ft_strncmp.c ./libft/ft_strrchr.c ./libft/ft_tolower.c \
 ./libft/ft_toupper.c ./libft/ft_strlcpy.c ./libft/ft_strnstr.c ./libft/ft_atoi.c ./libft/ft_strlcat.c ./libft/ft_calloc.c ./libft/ft_strdup.c \
@@ -25,18 +25,18 @@ FUN = ./GNL/get_next_line.c ./libft/ft_bzero.c ./libft/ft_isalnum.c ./libft/ft_i
 ./ft_printf/display_hexa.c ./ft_printf/ft_convert_hexa_neg.c ./ft_printf/ft_atoa.c ./ft_printf/display_p.c ./ft_printf/ft_convert_memory.c \
 ./ft_printf/ft_put_precision.c ./ft_printf/display_0.c
 
-OBJS = $(FUN:.c=.o)
+INCLUDES = -I ./libft/libft.h -I ./GNL/get_next_line.h -I ./ft_printf/lib_ft_printf.h
+OBJS = $(SRC:.c=.o)
 
 CC = gcc
 CFLAGS = -c -I -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS) ./libft/libft.h
-	@$(CC) $(CFLAGS) $(FUN)
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(SRC)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@$(MAKE) clean
 
 clean:
 	@rm -f $(OBJS) *.o
