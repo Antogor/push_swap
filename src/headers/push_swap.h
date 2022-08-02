@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:32:25 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:29:15 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		reverse_rotate_stacks(int *stack, char *ins, int len);
 int		reverse_rotate_a_b(int *a, int *b, int len_a, int len_b);
 int		*ft_copy_array(int *ori, int len);
 int		*ft_allocate_malloc(int len);
+int		sort_low_stack(t_stack *stack);
 
 #endif

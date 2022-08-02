@@ -1,7 +1,7 @@
 NAME = push_swap
 INCLUDES = -I ./src/headers/push_swap.h -I ./libft/libft.h -I ./GNL/get_next_line.h -I ./ft_printf/lib_ft_printf.h
 SRC = ./src/push_swap.c ./src/engine/engine.c ./src/engine/rotate_instructions.c ./src/engine/swap_push_instructions.c \
-	  ./src/utils/error.c ./src/utils/success.c ./src/utils/utils.c ./src/utils/validate.c 
+	  ./src/utils/error.c ./src/utils/success.c ./src/utils/utils.c ./src/utils/validate.c ./src/engine/sort_low_stack.c 
 CC = gcc
 CFLAGS = -I -c
 OBJ = $(SRC:.c=.o)
