@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:11:56 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/08/23 17:50:30 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/09 17:44:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,16 @@ int	sort_low_stack(t_stack *stack)
 
 	max_bits = 0;
 	len  = stack->len_a;
-	i = 1;
+	i = 0;
 	while((len >> max_bits) != 0)
 		max_bits++;
-	while(i < max_bits + 1)
+	while(i < max_bits)
 	{
 		j = 0;
 		while(j < stack->len_a)
 		{
 			n = stack->a[j];
-			ft_printf("J: %d\n", j);
-			ft_printf("STACK LEN: %d\n", stack->len_a);
-			ft_printf("N: %d\n", n);
+			tmp = n >> j;
 			if (((n >> i)&1) == 1)
 				rotate_stacks(stack->a, "ra", len);
 			else

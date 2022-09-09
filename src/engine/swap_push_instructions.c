@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:50:43 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:21:00 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/09 18:58:27 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,76 +34,80 @@ int	swap_a_b(int *a, int *b, int len_a, int len_b)
 	return (0);
 }
 
-int	ft_extract_src(int *src, int *len)
+int	ft_pop(int *stack, int *len)
 {
-	int	*copy_src;
+	int	*copy_stack;
 	int	i;
 
-	i = 0;
-	copy_src = ft_copy_array(src, *len);
-	free(src);
 	*len -= 1;
-	if (*len <= 0)
-		src = ft_allocate_malloc(1);
-	else
+	if (*len == 0 || *len < 0)
+		return (0);
+	copy_stack = ft_copy_array(stack, *len + 1);
+	free(stack);
+	stack = ft_allocate_malloc(*len);
+	i = 0;
+	while (i < *len)
 	{
-		src = ft_allocate_malloc(*len);
-		while (i < *len)
-		{
-			src[i] = copy_src[i + 1];
-			i++;
-		}
+		stack[i] = copy_stack[i + 1];
+		i++;
 	}
-	free(copy_src);
+	free(copy_stack);
 	return (0);
 }
 
-int	ft_extract_dest(int *dest, int *len, int n)
+int	ft_push(int *stack, int *len, int n)
 {
-	int	*copy_dest;
+	int	*copy_stack;
 	int	i;
 
 	i = 0;
-	copy_dest = ft_copy_array(dest, *len);
-	free(dest);
+	copy_stack = ft_copy_array(stack, *len);
+	free(stack);
 	*len += 1;
-	dest = ft_allocate_malloc(*len);
-	dest[0] = n;
-	i = *len - 1;
-	while (i > 0)
+	stack = ft_allocate_malloc(*len);
+	stack[0] = n;
+	while (i < *len)
 	{
-		dest[i] = copy_dest[i - 1];
-		i--;
+		stack[i + 1] = copy_stack[i];
+		i++;
 	}
-	free(copy_dest);
+	free(copy_stack);
 	return (0);
 }
 
 int	push_stacks(t_stack *stack, char *ins)
 {
-	int	*dest;
-	int	*src;
-	int	*len_dest;
-	int	*len_src;
-
-	if (ft_strncmp(ins, "pa", 2) == 0)
-	{
-		dest = stack->a;
-		src = stack->b;
-		len_dest = &stack->len_a;
-		len_src = &stack->len_b;
-	}
-	else
-	{
-		dest = stack->b;
-		src = stack->a;
-		len_dest = &stack->len_b;
-		len_src = &stack->len_a;
-	}
-	if (!src)
-		return (0);
-	ft_extract_dest(dest, len_dest, src[0]);
-	ft_extract_src(src, len_src);
-	ft_printf("%s\n", ins);
+	int	*copy_dest;
+	int	i;
+	i = 0;
+	
+	//ft_pop(stack->a, &stack->len_a);
+	ft_push(stack->a, &stack->len_a, 6);
+//	if (ft_strncmp(ins, "pa", 2) == 0)
+//	{
+//	
+//		copy_dest = ft_copy_array(stack->a, stack->len_a);
+//		free(stack->a);
+//		stack->len_a += 1;
+//		stack->a = ft_allocate_malloc(stack->len_a);
+//		stack->a[0] = stack->b[0];
+//		i = stack->len_a - 1;
+//		while (i > 0)
+//		{
+//			stack->a[i] = copy_dest[i - 1];
+//			i--;
+//		}
+//		free(copy_dest);
+//		ft_extract_dest(stack->a, &stack->len_a, stack->b[0]);
+//		ft_extract_src(stack->b, &stack->len_b);
+//	}
+//	else
+//	{
+//		ft_extract_dest(stack->b, &stack->len_b, stack->a[0]);
+//		ft_extract_src(stack->a, &stack->len_a);
+//	}
+//	//if (!src)
+//	//	return (0);
+//	ft_printf("%s\n", ins);
 	return (0);
 }
