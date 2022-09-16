@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:22:14 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:35:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,9 @@ int	ft_isnumeric(char *c)
 	len = ft_strlen(c);
 	while (i < len)
 	{
-		if (c[i] == '+' || c[i] == '-')
-		{
-			if (c[i + 1] == '\0' || c[i + 1] == '-' || c[i + 1] == '+')
+		if (ft_isdigit(c[i]))
+			if (c[i + 1] == '-' || c[i + 1] == '+')
 				return (0);
-		}
-		if (!ft_isdigit(c[i]) && c[i] != '-' && c[i] != '+')
-			return (0);
 		i++;
 	}
 	return (1);
@@ -91,8 +87,7 @@ void	ft_validate(t_stack *stack, int argc, char **arguments)
 //	if (argc == 2)
 //		arguments = ft_parser_str(arguments, &i, &argc);
 	stack->len_stack = argc -1;
-	stack->a = (int *)malloc(sizeof(int) * stack->len_stack);
-	stack->b = (int *)malloc(sizeof(int) * stack->len_stack);
+	stack->a = ft_calloc(argc, sizeof(int));
 	while (i < argc)
 	{
 		if (!ft_isnumeric(arguments[i]))

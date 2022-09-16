@@ -6,12 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:57:16 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:20:47 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:21:47 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
-#include <stdlib.h>
 
 int	rotate_stacks(int *stack, char *ins, int len)
 {
