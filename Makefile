@@ -4,7 +4,7 @@ SRC = ./src/push_swap.c ./src/engine/engine.c ./src/engine/rotate_instructions.c
 	  ./src/utils/error.c ./src/utils/success.c ./src/utils/utils.c ./src/utils/validate.c ./src/engine/sort_low_stack.c \
 	  ./src/utils/push_pop_utils.c
 CC = gcc
-CFLAGS = -I -c
+CFLAGS = -I -c -g
 OBJ = $(SRC:.c=.o)
 MYLIBFT = ./MyLIBFT/
 

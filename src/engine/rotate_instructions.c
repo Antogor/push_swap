@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:57:16 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/16 20:21:47 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/18 13:58:21 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	rotate_stacks(int *stack, char *ins, int len)
 {
 	int	i;
 	int	tmp;
-
+	
 	if (len == 0 || len == 1)
 		return (0);
 	i = 0;

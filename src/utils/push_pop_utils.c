@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:42:27 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/16 20:35:57 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:36:43 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ int	ft_push_b(t_stack *stack, int n)
 	{
 		copy_stack = ft_copy_array(stack->b, stack->len_b);
 		free(stack->b);
-		stack->len_b += 1;
-		stack->b = ft_allocate_malloc(stack->len_b);
+		stack->b = ft_allocate_malloc(stack->len_b + 1);
 		stack->b[0] = n;
 		while (i < stack->len_b)
 		{
 			stack->b[i + 1] = copy_stack[i];
 			i++;
 		}
+		stack->len_b += 1;
 		free(copy_stack);
 	}
 	return (0);
@@ -99,14 +99,14 @@ int	ft_push_a(t_stack *stack, int n)
 	{
 		copy_stack = ft_copy_array(stack->a, stack->len_a);
 		free(stack->a);
-		stack->len_a += 1;
-		stack->a = ft_allocate_malloc(stack->len_a);
+		stack->a = ft_allocate_malloc(stack->len_a + 1);
 		stack->a[0] = n;
 		while (i < stack->len_a)
 		{
 			stack->a[i + 1] = copy_stack[i];
 			i++;
 		}
+		stack->len_a += 1;
 		free(copy_stack);
 	}
 	return (0);

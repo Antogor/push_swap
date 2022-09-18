@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:07:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/16 20:40:11 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:38:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,20 @@ int	ft_run(t_stack *stack)
 	stack->len_a = stack->len_stack;
 	stack->len_b = 0;
 //	ft_printf("before %d\n", stack->len_a);
-//	push_stacks(stack, "pb");
-//	push_stacks(stack, "pb");
-//	push_stacks(stack, "pb");
-//	push_stacks(stack, "pb");
-//	push_stacks(stack, "pa");
+	rotate_stacks(stack->a, "ra", stack->len_a);
+	swap_stacks(stack->a, "sa", stack->len_a);
+	push_stacks(stack, "pb");
+	swap_stacks(stack->a, "sa", stack->len_a);
+	push_stacks(stack, "pa");
+	swap_stacks(stack->a, "sa", stack->len_a);
+	ft_printf("STACK B: %d\n", stack->b[0]);
+	i = 0;
+	while(i < stack->len_a)
+	{
+		ft_printf("STACK: %d\n", stack->a[i++]);
+	}
+	if (stack->len_b == 0 && ft_stack_is_sorted(stack->a, stack->len_a) == 1)
+		ft_printf("END\n");
 //	i = 0;
 //	while(i < stack->len_a)
 //	{
@@ -60,15 +69,24 @@ int	ft_run(t_stack *stack)
 //	ft_printf("before %d\n", stack->len_a);
 //	push_stacks(stack, "");
 //	ft_printf("after %d\n", stack->len_a);
-	sort_low_stack(stack);
-//	while(ft_stack_is_sorted(stack->a, stack->len_stack) == 0)
+//	sort_low_stack(stack);
+//	sort_low_stack(stack);
+//	sort_low_stack(stack);
+//	sort_low_stack(stack);
+//	sort_low_stack(stack);
+//	while(1)
 //	{
-//  		sort_low_stack(stack);
-  		i = 0;
-  		while(i < stack->len_a)
-  		{
-  			ft_printf("STACK: %d\n", stack->a[i++]);
-  		}
+//		sort_low_stack(stack);
+//		if (stack->len_b == 0 && ft_stack_is_sorted(stack->a, stack->len_a) == 1)
+//		{
+//			ft_printf("AAAAAAA\n");
+//			break;
+//		}
+//		i = 0;
+//		while(i < stack->len_a)
+//		{
+//			ft_printf("STACK: %d\n", stack->a[i++]);
+//		}
 //	}
 //	ft_printf("STACKAAAAAAAAAAAAAAAAa");
 //	i = 0;

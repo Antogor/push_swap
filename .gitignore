@@ -3,3 +3,4 @@ a.out
 push_swap
 MyLIBFT/libft.a
 *.swp
+*.dSYM
