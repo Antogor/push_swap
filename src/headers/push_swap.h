@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/16 19:58:41 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:24:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
-	int	len_stack;
 	int	len_a;
 	int	len_b;
 }t_stack;
@@ -45,5 +44,5 @@ int		ft_push_a(t_stack *stack, int n);
 int		ft_push_b(t_stack *stack, int n);
 int		ft_pop_a(t_stack *stack);
 int		ft_pop_b(t_stack *stack);
-
+int		ft_vector_len(char **arg);
 #endif

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/16 20:35:01 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:18:19 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,43 +51,44 @@ int	ft_isnumeric(char *c)
 	}
 	return (1);
 }
-/*
-char **ft_parser_str(char **arguments, int *n, int *argc)
-{
-		int i;
-		int len;
-		char **new;
-	
-		i = 0;
-		len = ft_strlen(arguments[1]);
-		ft_printf("LEN: %d\n", len);
-		while(i < len)
-		{
-			if (arguments[1][i] == ' ')
-			{
-				new = ft_split(arguments[1], ' ');
-				*argc = 4;
-				*n = 0;
-				return (new); 
-			}
-			i++;
-		}
-		return (arguments);
-}
-*/
 
-void	ft_validate(t_stack *stack, int argc, char **arguments)
+void	ft_parser_str(char **arguments, t_stack *stack)
+{
+	int		i;
+	int		n;
+	char	**split;
+
+	split = ft_split(arguments[1], ' ');
+	stack->len_a = ft_vector_len(split);
+	stack->len_b = 0;
+	stack->a = ft_allocate_malloc(stack->len_a);
+	stack->b = NULL;
+	i = 0;
+	while (i < stack->len_a)
+	{
+		if (!ft_isnumeric(split[i]))
+			ft_error(stack);
+		n = (int)ft_atoi(split[i]);
+		if (n < -2147483648 || n > 2147483647)
+			ft_error(stack);
+		stack->a[i] = (int)n;
+		i++;
+	}
+	free(split);
+}
+
+void	ft_extract_args(t_stack *stack, int argc, char **arguments)
 {
 	int	i;
 	int	j;
 	int	n;
 
+	stack->len_a = argc - 1;
+	stack->len_b = 0;
+	stack->a = ft_allocate_malloc(stack->len_a);
+	stack->b = NULL;
 	i = 1;
 	j = 0;
-//	if (argc == 2)
-//		arguments = ft_parser_str(arguments, &i, &argc);
-	stack->len_stack = argc -1;
-	stack->a = ft_calloc(argc, sizeof(int));
 	while (i < argc)
 	{
 		if (!ft_isnumeric(arguments[i]))
@@ -99,6 +100,14 @@ void	ft_validate(t_stack *stack, int argc, char **arguments)
 		i++;
 		j++;
 	}
-	if (!ft_isduplicate(stack->a, stack->len_stack))
+}
+
+void	ft_validate(t_stack *stack, int argc, char **arguments)
+{
+	if (argc == 2)
+		ft_parser_str(arguments, stack);
+	else
+		ft_extract_args(stack, argc, arguments);
+	if (!ft_isduplicate(stack->a, stack->len_a))
 		ft_error(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:03:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/18 15:09:56 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:46:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,19 @@ int	*ft_allocate_malloc(int len)
 	if (!result)
 		ft_error(NULL);
 	return (result);
+}
+
+int	ft_vector_len(char **arg)
+{
+	char	**aux;
+	int		len;
+
+	aux = arg;
+	len = 0;
+	while(*aux)
+	{
+		aux++;
+		len++;
+	}
+	return (len);
 }

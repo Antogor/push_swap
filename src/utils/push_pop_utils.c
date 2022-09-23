@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:42:27 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/18 17:36:43 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:18:24 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,18 @@ int	ft_pop_b(t_stack *stack)
 	int	*copy_stack;
 	int	i;
 
+//	if (stack->len_b - 1 == 0)
+//	{
+//		free(stack->b);
+//		return (0);
+//	}
+//	if (stack->len_b - 1 < 0)
+//		return (0);
 	stack->len_b -= 1;
+	/* ES NECESARIO ESTE IF?
+	// PROBAR CON OTRO PUSH A LA PILA A
+	// COMENTANDO ESTE IF
+	*/
 	if (stack->len_b == 0 || stack->len_b < 0)
 		return (0);
 	copy_stack = ft_copy_array(stack->b, stack->len_b + 1);
