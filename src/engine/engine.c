@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:07:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/30 17:26:54 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 18:57:07 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,10 @@ int	ft_run(t_stack *stack)
 
 	if (ft_stack_is_sorted(stack->a, stack->len_a))
 		ft_success(stack);
-	push_stacks(stack, "pb");
-	i = 0;
-	while (i < stack->len_a)
+	stack->len_stack = stack->len_a;
+	while (!ft_stack_is_sorted(stack->a, stack->len_a))
 	{
-		ft_printf("%d\n", stack->a[i++]);
+		sort_stack(stack);
 	}
-	if (stack->len_b == 0 && ft_stack_is_sorted(stack->a, stack->len_a))
-		ft_printf("END\n");
 	return (0);
 }

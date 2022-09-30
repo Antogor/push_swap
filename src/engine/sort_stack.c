@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:11:56 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/18 13:35:57 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 18:59:21 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	sort_low_stack(t_stack *stack)
+int	sort_stack(t_stack *stack)
 {
 	int max_bits;
 	int	len;
@@ -45,19 +45,19 @@ int	sort_low_stack(t_stack *stack)
 //	}
 //	ft_printf("STACK: %d\n", stack->len_stack);
 	i = 0;
-	while(i < stack->len_stack)
-	{
+//	while(i < stack->len_stack)
+//	{
 //		n = stack->a[0];
 //		if ((n >> i) &1)
 //		{
-//			rotate_stacks(stack->a, "ra", stack->len_a);
+			swap_stacks(stack->a, "sa", stack->len_a);
 //		}
 //		else
-			push_stacks(stack, "pb");
+//			push_stacks(stack, "pb");
 		//ft_printf("STACK: %d\n", stack->a[i]);
-		i++;
-	}
-	while(stack->len_b != 0)
-		push_stacks(stack, "pa");
+//		i++;
+//	}
+//	while(stack->len_b != 0)
+//		push_stacks(stack, "pa");
 	return (0);
 }

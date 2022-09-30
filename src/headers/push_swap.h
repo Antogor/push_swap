@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/23 18:24:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 18:54:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stacks
 	int	*b;
 	int	len_a;
 	int	len_b;
+	int	len_stack;
 }t_stack;
 
 void	ft_error(t_stack *stack);
@@ -39,7 +40,7 @@ int		reverse_rotate_stacks(int *stack, char *ins, int len);
 int		reverse_rotate_a_b(int *a, int *b, int len_a, int len_b);
 int		*ft_copy_array(int *src, int len);
 int		*ft_allocate_malloc(int len);
-int		sort_low_stack(t_stack *stack);
+int		sort_stack(t_stack *stack);
 int		ft_push_a(t_stack *stack, int n);
 int		ft_push_b(t_stack *stack, int n);
 int		ft_pop_a(t_stack *stack);
