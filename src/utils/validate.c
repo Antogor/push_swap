@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:22:14 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:28:51 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,55 +44,54 @@ int	ft_isnumeric(char *c)
 	len = ft_strlen(c);
 	while (i < len)
 	{
-		if (c[i] == '+' || c[i] == '-')
-		{
-			if (c[i + 1] == '\0' || c[i + 1] == '-' || c[i + 1] == '+')
-				return (0);
-		}
-		if (!ft_isdigit(c[i]) && c[i] != '-' && c[i] != '+')
+		if (!ft_isdigit(c[i]))
+			return (0);
+		if (c[i + 1] == '-' || c[i + 1] == '+'
+			|| (c[i] == '-' && c[i + 1] == '\0')
+			|| (c[i] == '+' && c[i + 1] == '\0'))
 			return (0);
 		i++;
 	}
 	return (1);
 }
-/*
-char **ft_parser_str(char **arguments, int *n, int *argc)
-{
-		int i;
-		int len;
-		char **new;
-	
-		i = 0;
-		len = ft_strlen(arguments[1]);
-		ft_printf("LEN: %d\n", len);
-		while(i < len)
-		{
-			if (arguments[1][i] == ' ')
-			{
-				new = ft_split(arguments[1], ' ');
-				*argc = 4;
-				*n = 0;
-				return (new); 
-			}
-			i++;
-		}
-		return (arguments);
-}
-*/
 
-void	ft_validate(t_stack *stack, int argc, char **arguments)
+void	ft_parser_str(char **arguments, t_stack *stack)
+{
+	int		i;
+	int		n;
+	char	**split;
+
+	split = ft_split(arguments[1], ' ');
+	stack->len_a = ft_vector_len(split);
+	stack->len_b = 0;
+	stack->a = ft_allocate_malloc(stack->len_a);
+	stack->b = NULL;
+	i = 0;
+	while (i < stack->len_a)
+	{
+		if (!ft_isnumeric(split[i]))
+			ft_error(stack);
+		n = (int)ft_atoi(split[i]);
+		if (n < -2147483648 || n > 2147483647)
+			ft_error(stack);
+		stack->a[i] = (int)n;
+		i++;
+	}
+	free(split);
+}
+
+void	ft_extract_args(t_stack *stack, int argc, char **arguments)
 {
 	int	i;
 	int	j;
 	int	n;
 
+	stack->len_a = argc - 1;
+	stack->len_b = 0;
+	stack->a = ft_allocate_malloc(stack->len_a);
+	stack->b = NULL;
 	i = 1;
 	j = 0;
-//	if (argc == 2)
-//		arguments = ft_parser_str(arguments, &i, &argc);
-	stack->len_stack = argc -1;
-	stack->a = (int *)malloc(sizeof(int) * stack->len_stack);
-	stack->b = (int *)malloc(sizeof(int) * stack->len_stack);
 	while (i < argc)
 	{
 		if (!ft_isnumeric(arguments[i]))
@@ -104,6 +103,14 @@ void	ft_validate(t_stack *stack, int argc, char **arguments)
 		i++;
 		j++;
 	}
-	if (!ft_isduplicate(stack->a, stack->len_stack))
+}
+
+void	ft_validate(t_stack *stack, int argc, char **arguments)
+{
+	if (argc == 2)
+		ft_parser_str(arguments, stack);
+	else
+		ft_extract_args(stack, argc, arguments);
+	if (!ft_isduplicate(stack->a, stack->len_a))
 		ft_error(stack);
 }

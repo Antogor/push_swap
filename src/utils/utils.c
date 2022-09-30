@@ -6,42 +6,48 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:03:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:22:01 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:23:25 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	*ft_copy_array(int *ori, int len)
+int	*ft_copy_array(int *src, int len)
 {
 	int	i;
-	int	*dest;
+	int	*dst;
 
+	dst = ft_allocate_malloc(len);
 	i = 0;
-	if (len == 0)
-	{
-		dest = (int *)malloc(sizeof(int) * 1);
-		if (!dest)
-			ft_error(NULL);
-		return (dest);
-	}
-	dest = (int *)malloc(sizeof(int) * len);
-	if (!dest)
-		ft_error(NULL);
 	while (i < len)
 	{
-		dest[i] = ori[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
 
 int	*ft_allocate_malloc(int len)
 {
 	int	*result;
 
-	result = (int *)malloc(sizeof(int) * len);
+	result = ft_calloc(len, sizeof(int));
 	if (!result)
 		ft_error(NULL);
 	return (result);
+}
+
+int	ft_vector_len(char **arg)
+{
+	char	**aux;
+	int		len;
+
+	aux = arg;
+	len = 0;
+	while (*aux)
+	{
+		aux++;
+		len++;
+	}
+	return (len);
 }

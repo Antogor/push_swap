@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 17:07:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/27 17:55:38 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:26:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,10 @@ int	ft_stack_is_sorted(int *a, int len)
 	int	j;
 
 	i = 0;
-	while (i < len)
+	while (i < len - 1)
 	{
-		j = i;
-		while (j < len - 1)
-		{
-			if (a[j] > a[j + 1])
-				return (0);
-			j++;
-		}
+		if (a[i] > a[i + 1])
+			return (0);
 		i++;
 	}
 	return (1);
@@ -36,10 +31,15 @@ int	ft_run(t_stack *stack)
 {
 	int	i;
 
-	if (ft_stack_is_sorted(stack->a, stack->len_stack))
+	if (ft_stack_is_sorted(stack->a, stack->len_a))
 		ft_success(stack);
-	stack->len_a = stack->len_stack;
-	stack->len_b = 0;
-
+	push_stacks(stack, "pb");
+	i = 0;
+	while (i < stack->len_a)
+	{
+		ft_printf("%d\n", stack->a[i++]);
+	}
+	if (stack->len_b == 0 && ft_stack_is_sorted(stack->a, stack->len_a))
+		ft_printf("END\n");
 	return (0);
 }

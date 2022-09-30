@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:57:05 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:32:25 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:24:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
-	int	len_stack;
 	int	len_a;
 	int	len_b;
 }t_stack;
@@ -38,7 +37,12 @@ int		rotate_stacks(int *stack, char *ins, int len);
 int		rotate_a_b(int *a, int *b, int len_a, int len_b);
 int		reverse_rotate_stacks(int *stack, char *ins, int len);
 int		reverse_rotate_a_b(int *a, int *b, int len_a, int len_b);
-int		*ft_copy_array(int *ori, int len);
+int		*ft_copy_array(int *src, int len);
 int		*ft_allocate_malloc(int len);
-
+int		sort_low_stack(t_stack *stack);
+int		ft_push_a(t_stack *stack, int n);
+int		ft_push_b(t_stack *stack, int n);
+int		ft_pop_a(t_stack *stack);
+int		ft_pop_b(t_stack *stack);
+int		ft_vector_len(char **arg);
 #endif

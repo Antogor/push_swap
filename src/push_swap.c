@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:40:53 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/07/13 19:32:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:22:51 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	main(int argc, char **argv)
 	t_stack	*stack;
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (argc <= 1)
-	{
+	if (stack == NULL)
 		return (0);
-	}
+	if (argc <= 1)
+		return (0);
 	if (!stack)
 		ft_error(stack);
 	ft_validate(stack, argc, argv);
