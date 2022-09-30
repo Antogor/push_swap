@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/23 20:18:19 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:28:51 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,12 @@ int	ft_isnumeric(char *c)
 	len = ft_strlen(c);
 	while (i < len)
 	{
-		if (ft_isdigit(c[i]))
-			if (c[i + 1] == '-' || c[i + 1] == '+')
-				return (0);
+		if (!ft_isdigit(c[i]))
+			return (0);
+		if (c[i + 1] == '-' || c[i + 1] == '+'
+			|| (c[i] == '-' && c[i + 1] == '\0')
+			|| (c[i] == '+' && c[i + 1] == '\0'))
+			return (0);
 		i++;
 	}
 	return (1);
