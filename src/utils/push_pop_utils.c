@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:42:27 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/30 17:25:08 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:41:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	ft_pop_a(t_stack *stack)
 	while (i < stack->len_a)
 	{
 		stack->a[i] = copy_stack[i + 1];
+		ft_printf("AAA %d\n", stack->a[i]);
 		i++;
 	}
 	free(copy_stack);

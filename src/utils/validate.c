@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 10:49:33 by agarzon-          #+#    #+#             */
-/*   Updated: 2022/09/30 17:28:51 by agarzon-         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:49:15 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,17 @@ void	ft_extract_args(t_stack *stack, int argc, char **arguments)
 
 void	ft_validate(t_stack *stack, int argc, char **arguments)
 {
-	if (argc == 2)
-		ft_parser_str(arguments, stack);
-	else
-		ft_extract_args(stack, argc, arguments);
-	if (!ft_isduplicate(stack->a, stack->len_a))
-		ft_error(stack);
+	int i;
+
+//	i = 0;
+//	while (i < argc)
+//	{
+		if (argc == 2)
+			ft_parser_str(arguments, stack);
+		else
+			ft_extract_args(stack, argc, arguments);
+		if (!ft_isduplicate(stack->a, stack->len_a))
+			ft_error(stack);
+//		i++;
+//	}
 }
