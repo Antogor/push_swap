@@ -34,12 +34,12 @@ int	ft_run(t_stack *stack)
 	if (ft_stack_is_sorted(stack->a, stack->len_a))
 		ft_success(stack);
 	stack->len_stack = stack->len_a;
-//	while (!ft_stack_is_sorted(stack->a, stack->len_a))
-//	{
-//		sort_stack(stack);
-//		ft_printf("%d\n", stack->a[i]);
-//		i++;
-//	}
+	while (!ft_stack_is_sorted(stack->a, stack->len_a))
+	{
+		sort_stack(stack);
+		ft_printf("%d\n", stack->a[i]);
+		i++;
+	}
 	sort_stack(stack);
 //	ft_stack_is_sorted(stack->a, stack->len_a);
 	i = 0;
