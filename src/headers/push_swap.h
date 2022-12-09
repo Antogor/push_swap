@@ -46,4 +46,6 @@ int		ft_push_b(t_stack *stack, int n);
 int		ft_pop_a(t_stack *stack);
 int		ft_pop_b(t_stack *stack);
 int		ft_vector_len(char **arg);
+void    free_stacks_a(t_stack *stack);
+void    free_stacks_b(t_stack *stack);
 #endif

@@ -21,7 +21,7 @@ int	ft_pop_b(t_stack *stack)
 	if (stack->len_b == 0 || stack->len_b < 0)
 		return (0);
 	copy_stack = ft_copy_array(stack->b, stack->len_b + 1);
-	free(stack->b);
+	free_stacks_b(stack);
 	stack->b = ft_allocate_malloc(stack->len_b);
 	i = 0;
 	while (i < stack->len_b)
@@ -42,13 +42,13 @@ int	ft_pop_a(t_stack *stack)
 	if (stack->len_a == 0 || stack->len_a < 0)
 		return (0);
 	copy_stack = ft_copy_array(stack->a, stack->len_a + 1);
-	free(stack->a);
+	free_stacks_a(stack);
 	stack->a = ft_allocate_malloc(stack->len_a);
 	i = 0;
 	while (i < stack->len_a)
 	{
 		stack->a[i] = copy_stack[i + 1];
-		ft_printf("AAA %d\n", stack->a[i]);
+		//ft_printf("AAA %d\n", stack->a[i]);
 		i++;
 	}
 	free(copy_stack);
@@ -62,6 +62,7 @@ int	ft_push_b(t_stack *stack, int n)
 
 	i = 0;
 	if (stack->len_b == 0)
+	//if (!stack->b)
 	{
 		stack->b = ft_allocate_malloc(1);
 		stack->len_b += 1;
@@ -70,7 +71,7 @@ int	ft_push_b(t_stack *stack, int n)
 	else
 	{
 		copy_stack = ft_copy_array(stack->b, stack->len_b);
-		free(stack->b);
+		free_stacks_b(stack);
 		stack->b = ft_allocate_malloc(stack->len_b + 1);
 		stack->b[0] = n;
 		while (i < stack->len_b)
@@ -91,6 +92,7 @@ int	ft_push_a(t_stack *stack, int n)
 
 	i = 0;
 	if (stack->len_a == 0)
+	//if (!stack->a)
 	{
 		stack->a = ft_allocate_malloc(1);
 		stack->len_a += 1;
@@ -99,7 +101,7 @@ int	ft_push_a(t_stack *stack, int n)
 	else
 	{
 		copy_stack = ft_copy_array(stack->a, stack->len_a);
-		free(stack->a);
+		free_stacks_a(stack);
 		stack->a = ft_allocate_malloc(stack->len_a + 1);
 		stack->a[0] = n;
 		while (i < stack->len_a)
