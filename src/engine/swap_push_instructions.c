@@ -12,50 +12,64 @@
 
 #include "../headers/push_swap.h"
 
-int	swap_stacks(int *stack, char *ins, int len)
+int	swap_stacks(t_list *stack, char *ins, int len)
 {
-	int	tmp;
+	void	*n;
+	void	*n2;
 
 	if (len == 1 || len == 0)
 		return (0);
-	tmp = stack[1];
-	stack[1] = stack[0];
-	stack[0] = tmp;
+	n = stack->next->content;
+    n2 = stack->content;
+    stack->content = n;
+    stack->next->content = n2;
 	if (ins != NULL)
 		ft_printf("%s\n", ins);
+	n = NULL;
+    n2 = NULL;
 	return (0);
 }
 
-int	swap_a_b(int *a, int *b, int len_a, int len_b)
+int	swap_a_b(t_list *a, t_list *b)
 {
-	swap_stacks(a, NULL, len_a);
-	swap_stacks(b, NULL, len_b);
+	swap_stacks(a, NULL, ft_lstsize(a));
+	swap_stacks(b, NULL, ft_lstsize(b));
 	ft_printf("ss\n");
 	return (0);
 }
 
-int	push_stacks(t_stack *stack, char *ins)
+int	ft_push_a(t_list *stack_a, t_list *stack_b)
 {
-	int	n;
+	t_list	*tmp;
 
-	if (ft_strncmp(ins, "pa", 2) == 0)
-	{
-		if (stack->len_b != 0)
-		{
-			n = stack->b[0];
-			ft_pop_b(stack);
-			ft_push_a(stack, n);
-		}
-	}
+	if (stack_a == NULL)
+		return (0);
+	tmp = stack_a;
+    stack_a = stack_a->next;
+    tmp->next = NULL;
+	if (stack_b == NULL)
+		stack_b = tmp;
 	else
-	{
-		if (stack->len_a != 0)
-		{
-			n = stack->a[0];
-			ft_pop_a(stack);
-			ft_push_b(stack, n);
-		}
-	}
-	ft_printf("%s\n", ins);
+		ft_lstadd_front(&stack_b, tmp);
+	ft_printf("pa\n");
+	tmp = NULL;
+	return (0);
+}
+
+int	ft_push_b(t_list *stack_a, t_list *stack_b)
+{
+	t_list	*tmp;
+
+	if (stack_b == NULL)
+		return (0);
+	tmp = stack_b;
+	stack_b = stack_b->next;
+    tmp->next = NULL;
+	if (stack_a == NULL)
+		stack_a = tmp;
+	else
+		ft_lstadd_front(&stack_a, tmp);
+	ft_printf("pb\n");
+	tmp = NULL;
 	return (0);
 }

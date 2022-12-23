@@ -37,8 +37,8 @@ int	down_position(int *stack, int len)
 	return pos;
 }
 
-int	sort_stack(t_stack *stack)
+int	sort_stack(t_list *stack)
 {
-	ft_printf("POS: %d\n", down_position(stack->a, stack->len_a));
+	//ft_printf("POS: %d\n", down_position(stack->a, stack->len_a));
 	return 0;
 }

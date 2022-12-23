@@ -12,31 +12,6 @@
 
 #include "../headers/push_swap.h"
 
-int	*ft_copy_array(int *src, int len)
-{
-	int	i;
-	int	*dst;
-
-	dst = ft_allocate_malloc(len);
-	i = 0;
-	while (i < len)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
-
-int	*ft_allocate_malloc(int len)
-{
-	int	*result;
-
-	result = ft_calloc(len, sizeof(int));
-	if (!result)
-		ft_error(NULL);
-	return (result);
-}
-
 int	ft_vector_len(char **arg)
 {
 	char	**aux;
@@ -50,4 +25,29 @@ int	ft_vector_len(char **arg)
 		len++;
 	}
 	return (len);
+}
+
+void	ft_delete_last(t_list **stack)
+{
+	t_list *aux;
+
+	aux = *stack;
+	while (aux)
+	{
+		if (aux->next->next == NULL)
+			aux->next = NULL;
+		aux = aux->next;
+	}
+}
+
+void    free_content(void *content)
+{
+	if(content)
+    	free(content);
+}
+
+void	print_content(void *content)
+{
+	if(content)
+		ft_printf("%d\n", *(int*)content);
 }

@@ -12,15 +12,9 @@
 
 #include "../headers/push_swap.h"
 
-void	ft_success(t_stack *stack)
+void	ft_success(t_list **stack)
 {
 	if (stack)
-	{
-		if (stack->a)
-			free(stack->a);
-		if (stack->b)
-			free(stack->b);
-		free(stack);
-	}
+		ft_lstclear(stack, free_content);
 	exit(EXIT_SUCCESS);
 }

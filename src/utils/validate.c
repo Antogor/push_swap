@@ -12,25 +12,22 @@
 
 #include "../headers/push_swap.h"
 
-int	ft_isduplicate(int *a, int len)
+int	ft_isduplicate(t_list *stack)
 {
-	int	i;
-	int	j;
-	int	tmp;
+	t_list	*aux;
+	t_list	*aux2;
 
-	i = 0;
-	j = 1;
-	while (i < len)
+	aux = stack;
+	while (aux)
 	{
-		tmp = a[i];
-		while (j < len)
+		aux2 = aux->next;
+		while (aux2)
 		{
-			if (tmp == a[j])
+			if (*(int*)aux->content == *(int*)aux2->content)
 				return (0);
-			j++;
+			aux2 = aux2->next;
 		}
-		i++;
-		j = i + 1;
+		aux = aux->next;
 	}
 	return (1);
 }
@@ -55,69 +52,62 @@ int	ft_isnumeric(char *c)
 	return (1);
 }
 
-void	ft_parser_str(char **arguments, t_stack *stack)
+void	ft_parser_str(char **arguments, t_list *stack)
+{
+	int		i;
+	int		n;
+
+	i = 0;
+	while (i < ft_vector_len(arguments))
+	{
+		if (!ft_isnumeric(arguments[i]))
+			ft_error(&stack);
+		n = ft_atoi(arguments[i]);
+		if (n < -2147483648 || n > 2147483647)
+			ft_error(&stack);
+		ft_lstadd_back(&stack, ft_lstnew(&n));
+		i++;
+	}
+}
+
+void	ft_extract_args(t_list *stack, int argc, char **arguments)
 {
 	int		i;
 	int		n;
 	char	**split;
+	t_list	*tmp = NULL;
 
-	split = ft_split(arguments[1], ' ');
-	stack->len_a = ft_vector_len(split);
-	stack->len_b = 0;
-	stack->a = ft_allocate_malloc(stack->len_a);
-	stack->b = NULL;
-	i = 0;
-	while (i < stack->len_a)
-	{
-		if (!ft_isnumeric(split[i]))
-			ft_error(stack);
-		n = (int)ft_atoi(split[i]);
-		if (n < -2147483648 || n > 2147483647)
-			ft_error(stack);
-		stack->a[i] = (int)n;
-		i++;
-	}
-	free(split);
-}
-
-void	ft_extract_args(t_stack *stack, int argc, char **arguments)
-{
-	int	i;
-	int	j;
-	int	n;
-
-	stack->len_a = argc - 1;
-	stack->len_b = 0;
-	stack->a = ft_allocate_malloc(stack->len_a);
-	stack->b = NULL;
 	i = 1;
-	j = 0;
+	//tmp = *stack;
 	while (i < argc)
 	{
-		if (!ft_isnumeric(arguments[i]))
-			ft_error(stack);
-		n = ft_atoi(arguments[i]);
-		if (n < -2147483648 || n > 2147483647)
-			ft_error(stack);
-		stack->a[j] = (int)n;
+		if(ft_strrchr(arguments[i], ' '))
+		{
+			split = ft_split(arguments[i], ' ');
+			ft_parser_str(split, stack);
+		}
+		else
+		{
+			if (!ft_isnumeric(arguments[i]))
+				ft_error(&stack);
+			n = ft_atoi(arguments[i]);
+			if (n < -2147483648 || n > 2147483647)
+				ft_error(&stack);
+			ft_lstadd_back(&tmp, ft_lstnew(&n));
+			ft_printf("%d Iter: \n",i);
+			ft_lstiter(tmp, print_content);
+			ft_printf("-----------------\n");
+		}
 		i++;
-		j++;
 	}
 }
 
-void	ft_validate(t_stack *stack, int argc, char **arguments)
+void	ft_validate(t_list *stack, int argc, char **arguments)
 {
-	int i;
+	t_list	*tmp;
 
-//	i = 0;
-//	while (i < argc)
-//	{
-		if (argc == 2)
-			ft_parser_str(arguments, stack);
-		else
-			ft_extract_args(stack, argc, arguments);
-		if (!ft_isduplicate(stack->a, stack->len_a))
-			ft_error(stack);
-//		i++;
-//	}
+	ft_extract_args(stack, argc, arguments);
+	if (!ft_isduplicate(tmp))
+		ft_error(&tmp);
+	ft_printf("%d\n", *(int*)tmp->content);
 }

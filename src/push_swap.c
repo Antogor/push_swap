@@ -14,17 +14,13 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack;
+	t_list *stack_a;
 
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (stack == NULL)
-		return (0);
+	stack_a = NULL;
 	if (argc <= 1)
 		return (0);
-	if (!stack)
-		ft_error(stack);
-	ft_validate(stack, argc, argv);
-	ft_run(stack);
-	ft_success(stack);
+	ft_validate(stack_a, argc, argv);
+	ft_run(&stack_a);
+	ft_success(&stack_a);
 	return (0);
 }

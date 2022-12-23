@@ -12,36 +12,40 @@
 
 #include "../headers/push_swap.h"
 
-int	ft_stack_is_sorted(int *a, int len)
+int	ft_stack_is_sorted(t_list *stack)
 {
-	int	i;
-	int	j;
+	t_list *aux;
+    int len;
+    int i;
 
-	i = 0;
-	while (i < len - 1)
-	{
-		if (a[i] > a[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
+    len = ft_lstsize(stack);
+    aux = stack;
+    i = 0;
+    while (i < len)
+    {
+        if (*((int*)aux->content) > *((int*)aux->next->content))
+            return 0;
+        aux = aux->next;
+        i++;
+        
+    }
+    return 1;
 }
 
-int	ft_run(t_stack *stack)
+int	ft_run(t_list **stack)
 {
-	int	i;
+    t_list  *stack_a;
+    t_list  *stack_b;
 
-	if (ft_stack_is_sorted(stack->a, stack->len_a))
-		ft_success(stack);
-	stack->len_stack = stack->len_a;
-	i = 0;
-	sort_stack(stack);
-//	while (!ft_stack_is_sorted(stack->a, stack->len_a))
-//	{
-//		//ft_printf("%d\n", stack->a[i]);
-//		//i++;
-//	}
-	//sort_stack(stack);
-//	ft_stack_is_sorted(stack->a, stack->len_a);
+    stack_a = *stack;
+    stack_b = NULL;
+	if (ft_stack_is_sorted(stack_a)){
+		ft_success(&stack_a);
+    }
+	//sort_stack(stack_a);
+
+	//ft_printf("%d\n",*(int*)stack_a->content);
+    ft_lstiter(stack_a, print_content);
+    ft_lstiter(stack_b, print_content);
 	return (0);
 }

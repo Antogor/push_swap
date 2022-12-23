@@ -12,58 +12,48 @@
 
 #include "../headers/push_swap.h"
 
-int	rotate_stacks(int *stack, char *ins, int len)
+int	rotate_stacks(t_list *stack, char *ins, int len)
 {
-	int	i;
-	int	tmp;
+	t_list	*tmp;
 
 	if (len == 0 || len == 1)
 		return (0);
-	i = 0;
-	tmp = stack[0];
-	while (i < len - 1)
-	{
-		stack[i] = stack[i + 1];
-		i++;
-	}
-	stack[len - 1] = tmp;
+	tmp = stack;
+    stack = stack->next;
+    ft_lstadd_back(&stack, tmp);
+    tmp = NULL;
 	if (ins != NULL)
 		ft_printf("%s\n", ins);
 	return (0);
 }
 
-int	rotate_a_b(int *a, int *b, int len_a, int len_b)
+int	rotate_a_b(t_list *a, t_list *b)
 {
-	rotate_stacks(a, NULL, len_a);
-	rotate_stacks(b, NULL, len_b);
+	rotate_stacks(a, NULL, ft_lstsize(a));
+	rotate_stacks(b, NULL, ft_lstsize(b));
 	ft_printf("rr\n");
 	return (0);
 }
 
-int	reverse_rotate_stacks(int *stack, char *ins, int len)
+int	reverse_rotate_stacks(t_list *stack, char *ins, int len)
 {
-	int	i;
-	int	tmp;
+	t_list	*tmp;
 
 	if (len == 0 || len == 1)
 		return (0);
-	i = len - 1;
-	tmp = stack[len - 1];
-	while (i > 0)
-	{
-		stack[i] = stack[i - 1];
-		i--;
-	}
-	stack[0] = tmp;
+	tmp = ft_lstlast(stack);
+    ft_delete_last(&stack);
+    ft_lstadd_front(&stack, tmp);
+	tmp = NULL;
 	if (ins != NULL)
 		ft_printf("%s\n", ins);
 	return (0);
 }
 
-int	reverse_rotate_a_b(int *a, int *b, int len_a, int len_b)
+int	reverse_rotate_a_b(t_list *a, t_list *b)
 {
-	reverse_rotate_stacks(a, NULL, len_a);
-	reverse_rotate_stacks(b, NULL, len_b);
+	reverse_rotate_stacks(a, NULL, ft_lstsize(a));
+	reverse_rotate_stacks(b, NULL, ft_lstsize(b));
 	ft_printf("rrr\n");
 	return (0);
 }
